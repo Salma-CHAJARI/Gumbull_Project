@@ -21,18 +21,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.startlist.Bean.Gumbull;
 import com.example.startlist.R;
-import com.example.startlist.service.ListService;
+import com.example.startlist.service.GumbullService;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdapterStar extends RecyclerView.Adapter<AdapterStar.StartViewHolder> implements Filterable {
+public class GumbullAdapter extends RecyclerView.Adapter<GumbullAdapter.GumbullViewHolder> implements Filterable {
 
     private List<Gumbull> gumbulls;
     private List<Gumbull> gumbullFull;
     private Context context;
 
-    public AdapterStar(List<Gumbull> list, Context context) {
+    public GumbullAdapter(List<Gumbull> list, Context context) {
         this.gumbulls = list;
         this.gumbullFull = new ArrayList<>(list);
         this.context = context;
@@ -40,9 +41,10 @@ public class AdapterStar extends RecyclerView.Adapter<AdapterStar.StartViewHolde
 
     @NonNull
     @Override
-    public StartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public GumbullViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(this.context).inflate(R.layout.star_item, parent, false);
-        final StartViewHolder hgumbull = new StartViewHolder(v);
+
+        final GumbullViewHolder hgumbull = new GumbullViewHolder(v);
 
         hgumbull.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +56,7 @@ public class AdapterStar extends RecyclerView.Adapter<AdapterStar.StartViewHolde
                 final RatingBar starp = popup.findViewById(R.id.starp);
 
                 Gumbull gumbull = gumbulls.get(hgumbull.getAdapterPosition());
-                Bitmap bitmap = ((BitmapDrawable) hgumbull.img.getDrawable()).getBitmap();
+                Bitmap bitmap = ((BitmapDrawable) hgumbull.photo.getDrawable()).getBitmap();
                 photop.setImageBitmap(bitmap);
                 nomp.setText(gumbull.getNom());
                 starp.setRating(gumbull.getStar());
@@ -68,10 +70,8 @@ public class AdapterStar extends RecyclerView.Adapter<AdapterStar.StartViewHolde
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 float r = starp.getRating();
-
-                                // Mettez à jour l'objet Gumbull et notifiez le changement
                                 gumbull.setStar(r);
-                                ListService.getInstance().update(gumbull);
+                                GumbullService.getInstance().update(gumbull);
                                 notifyItemChanged(hgumbull.getAdapterPosition());
                             }
                         })
@@ -85,15 +85,15 @@ public class AdapterStar extends RecyclerView.Adapter<AdapterStar.StartViewHolde
     }
 
     @Override
-    public void onBindViewHolder(@NonNull StartViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull GumbullViewHolder holder, int position) {
         Gumbull gumbull = gumbulls.get(position); // Récupérez l'élément
-        holder.text.setText(gumbull.getNom());
-        holder.stars.setRating(gumbull.getStar());
+        holder.nom.setText(gumbull.getNom());
+        holder.star.setRating(gumbull.getStar());
 
         Glide.with(context)
                 .load(gumbull.getPhoto())
                 .centerCrop()
-                .into(holder.img);
+                .into(holder.photo);
     }
 
     @Override
@@ -101,18 +101,18 @@ public class AdapterStar extends RecyclerView.Adapter<AdapterStar.StartViewHolde
         return gumbulls.size();
     }
 
-    class StartViewHolder extends RecyclerView.ViewHolder {
+    class GumbullViewHolder extends RecyclerView.ViewHolder {
 
-        TextView text;
-        ImageView img;
-        RatingBar stars;
+        TextView nom;
+        ImageView photo;
+        RatingBar star;
 
-        public StartViewHolder(View itemView) {
+        public GumbullViewHolder(View itemView) {
             super(itemView);
 
-            text = itemView.findViewById(R.id.nom);
-            img = itemView.findViewById(R.id.photo);
-            stars = itemView.findViewById(R.id.star);
+            nom = itemView.findViewById(R.id.nom);
+            photo = itemView.findViewById(R.id.photo);
+            star = itemView.findViewById(R.id.star);
         }
     }
 

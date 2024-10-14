@@ -6,17 +6,17 @@ import com.example.startlist.Dao.IDao;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListService implements IDao<Gumbull> {
+public class GumbullService implements IDao<Gumbull> {
     private List<Gumbull> gumbull;
-    private static ListService instance;
+    private static GumbullService instance;
 
-    private ListService() {
+    private GumbullService() {
         gumbull = new ArrayList<>();
     }
 
-    public static ListService getInstance() {
+    public static GumbullService getInstance() {
         if (instance == null) {
-            instance = new ListService();
+            instance = new GumbullService();
         }
         return instance;
     }

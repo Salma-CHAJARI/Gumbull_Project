@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "StartList"
+rootProject.name = "GumbullProject"
 include(":app")

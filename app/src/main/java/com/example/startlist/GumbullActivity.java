@@ -12,17 +12,17 @@ import androidx.core.app.ShareCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.startlist.Adapter.AdapterStar;
+import com.example.startlist.Adapter.GumbullAdapter;
 import com.example.startlist.Bean.Gumbull;
-import com.example.startlist.service.ListService;
+import com.example.startlist.service.GumbullService;
 import com.google.android.material.appbar.MaterialToolbar;
 
 
-public class ListActivity extends AppCompatActivity {
+public class GumbullActivity extends AppCompatActivity {
 
     private RecyclerView list;
-    private ListService gumballService;
-    private AdapterStar adapter = null;
+    private GumbullService gumballService;
+    private GumbullAdapter adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class ListActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(getResources().getColor(R.color.gumball_color_light));
         list = findViewById(R.id.recycle);
-        gumballService = ListService.getInstance();
+        gumballService = GumbullService.getInstance();
 
         gumballService.create(new Gumbull("Gumball Watterson ", "https://th.bing.com/th/id/OIP.JvoS61MsWPEKzvW9jt1suQAAAA?rs=1&pid=ImgDetMain", 4.5F));
         gumballService.create(new Gumbull("Darwin Watterson ", "https://th.bing.com/th/id/OIP.TO8Irpf6Wk646fMbHVcmAwHaHP?rs=1&pid=ImgDetMain", 3.4F));
@@ -54,7 +54,7 @@ public class ListActivity extends AppCompatActivity {
 
 
 
-        adapter = new AdapterStar(gumballService.findAll(), this);
+        adapter = new GumbullAdapter(gumballService.findAll(), this);
         list.setAdapter(adapter);
         list.setLayoutManager(new LinearLayoutManager(this));
     }

@@ -12,7 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class splashActivity extends AppCompatActivity {
+public class GumbullSplash extends AppCompatActivity {
     private ImageView im1,im2,im3,im4,im5,im6,im7,im8,im9,im10,im11;
 
     @Override
@@ -105,7 +105,7 @@ public class splashActivity extends AppCompatActivity {
             public void run() {
                 try {
                     sleep(10000);
-                    Intent intent = new Intent(splashActivity.this, ListActivity.class);
+                    Intent intent = new Intent(GumbullSplash.this, GumbullActivity.class);
                     startActivity(intent);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
