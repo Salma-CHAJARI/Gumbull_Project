@@ -1,4 +1,4 @@
-package com.example.startlist.Bean;
+package com.example.gumbull.Bean;
 
 public class Gumbull {
     private int id;

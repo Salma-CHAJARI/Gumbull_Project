@@ -1,4 +1,4 @@
-package com.example.startlist;
+package com.example.gumbull;
 
 import org.junit.Test;
 

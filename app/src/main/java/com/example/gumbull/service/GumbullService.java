@@ -1,7 +1,7 @@
-package com.example.startlist.service;
+package com.example.gumbull.service;
 
-import com.example.startlist.Bean.Gumbull;
-import com.example.startlist.Dao.IDao;
+import com.example.gumbull.Bean.Gumbull;
+import com.example.gumbull.Dao.IDao;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.startlist;
+package com.example.gumbull;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,9 +12,9 @@ import androidx.core.app.ShareCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.startlist.Adapter.GumbullAdapter;
-import com.example.startlist.Bean.Gumbull;
-import com.example.startlist.service.GumbullService;
+import com.example.gumbull.Adapter.GumbullAdapter;
+import com.example.gumbull.Bean.Gumbull;
+import com.example.gumbull.service.GumbullService;
 import com.google.android.material.appbar.MaterialToolbar;
 
 

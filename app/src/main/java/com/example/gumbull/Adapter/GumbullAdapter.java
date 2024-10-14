@@ -1,4 +1,4 @@
-package com.example.startlist.Adapter;
+package com.example.gumbull.Adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -19,9 +19,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.startlist.Bean.Gumbull;
-import com.example.startlist.R;
-import com.example.startlist.service.GumbullService;
+import com.example.gumbull.Bean.Gumbull;
+import com.example.gumbull.R;
+import com.example.gumbull.service.GumbullService;
 
 
 import java.util.ArrayList;
