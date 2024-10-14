@@ -11,7 +11,7 @@ L'application Gumbull a pour but de :
 - Maîtriser la bibliothèque Glide pour le chargement des images.
 
 ## Lien du Projet
-[Consultez l'application de pizzas sur GitHub](https://github.com/Salma-CHAJARI/Gumbull_Project.git)
+[Consultez l'application de Gumball sur GitHub](https://github.com/Salma-CHAJARI/Gumbull_Project.git)
 
 ## Énoncé du Projet
 Le projet consiste à créer une galerie de caractères de la série Gumball, avec les fonctionnalités suivantes :
