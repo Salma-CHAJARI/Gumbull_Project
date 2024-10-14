@@ -61,17 +61,29 @@ Après 5 secondes, l’utilisateur est redirigé vers `ListActivity` via un thre
 ## Objectif
 L’objectif du TP est de développer une application mobile en Java permettant de gérer une liste de caractères dans la série Gumball et d’afficher leurs détails de manière fluide et intuitive.
 
+## Technologies utilisées
+
+- **Langage** : Java
+- **UI Components** : ListView, ImageView, ImageButton, TextView
+- **Outils de développement** : Android Studio, Gradle
+
 ## Installation
-1. Clonez le dépôt :
-   ```bash
-   git clone https://github.com/Salma-CHAJARI/Gumbull_Project.git
+
+1. Clonez ce dépôt sur votre machine locale :
+
+ git clone https://github.com/Salma-CHAJARI/Gumbull_Project.git
+2-Ouvrer le projet
+3-Runner le projet dans un device
+
+## *Auteur*
+
+Développé par *CHAJARI Salma* dans le cadre d'un exercice de développement d'applications Android.
+## *Licence*
 
 
+Ce projet est sous licence *MIT*. Voir le fichier LICENSE pour plus de détails.
 
-
-
-
-
+## *Vidéo démonstratif*
 https://github.com/user-attachments/assets/d3508513-1061-4472-bc7c-4d275e20e52e
 
 
